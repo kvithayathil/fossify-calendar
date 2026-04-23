@@ -1,0 +1,10 @@
+{
+  "uuid": "123bfed4-eab6-4154-8d5b-db9710b69236",
+  "issue_uuid": "04871ff2-3499-4665-8db7-4acaee332fee",
+  "author": "WSvX",
+  "content": "Triage complete (2026-04-23): All 8 gaps accepted. G1=null assertion fix, G2=isCalendarsConfigured(), G3=widget wins completely (skip ALL global logic), G4=disable save until loaded, G5=guard back press, G6=doc updates before impl, G7=direct PendingIntent.getActivity() for gear, G8=create formal plan. Implementation unblocked.",
+  "created_at": "2026-04-23T18:23:54.026752Z",
+  "kind": "decision",
+  "signed_by": "SHA256:OxVKzDVT63LWEp3dpa1QPdVAjs1wW80ldT5VzwDO8qM",
+  "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgxDKvRkWA6ZzC+2jAne7ym1ttR/Yn9s/5qRiMu7Kd7xIAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAhAz6ULUNvgMD6FmsrsDqcFcBt89e1tWNIQcc/rRF309WLn2Yw/Vji4vVv04P+jkJ0Tog+vPO7RKLSInJ+x1ZAQ=="
+}
