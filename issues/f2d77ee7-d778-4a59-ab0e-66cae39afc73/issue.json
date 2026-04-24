@@ -1,0 +1,11 @@
+{
+  "uuid": "f2d77ee7-d778-4a59-ab0e-66cae39afc73",
+  "display_id": 19,
+  "title": "Cache DateTimeFormat objects in Formatter.kt",
+  "description": "Current state: \n\nDesired state: \n\nReason: \n\nFormatter.kt lines 90, 93 create DateTimeFormat objects per call. These run in every onBindViewHolder and widget getViewAt. Use thread-local caching or companion-object vals to reduce GC pressure in hot paths.",
+  "status": "open",
+  "priority": "low",
+  "created_by": "WSvX",
+  "created_at": "2026-04-24T05:55:01.849386Z",
+  "updated_at": "2026-04-24T05:55:01.849386Z"
+}
