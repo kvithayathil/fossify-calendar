@@ -1,0 +1,11 @@
+{
+  "uuid": "574d657b-fb29-4900-8df3-b7a00ba242d7",
+  "display_id": 20,
+  "title": "Fix string concatenation in adapter hot paths",
+  "description": "Current state: \n\nDesired state: \n\nReason: \n\nEventListWidgetAdapter:84,90 and EventListAdapter:143,149 build strings with += inside getViewAt/onBindViewHolder. Use StringBuilder or buildString for these hot-path string operations to reduce intermediate allocations.",
+  "status": "open",
+  "priority": "low",
+  "created_by": "WSvX",
+  "created_at": "2026-04-24T05:55:04.911545Z",
+  "updated_at": "2026-04-24T05:55:04.911545Z"
+}
