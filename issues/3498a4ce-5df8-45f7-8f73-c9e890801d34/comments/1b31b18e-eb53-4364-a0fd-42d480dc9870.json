@@ -1,0 +1,10 @@
+{
+  "uuid": "1b31b18e-eb53-4364-a0fd-42d480dc9870",
+  "issue_uuid": "3498a4ce-5df8-45f7-8f73-c9e890801d34",
+  "author": "WSvX",
+  "content": "Per-Widget Calendar Filtering: All 12 files implemented and committed (5 commits: b8cebd501, 1bb0fd97, 838d5aa9b, 1d19b476d, 247ec9bca). Full handoff recorded on crosslink issue #1 comment. Remaining: build verification (./gradlew assembleCoreDebug), close crosslink #1/#11, manual testing per design doc 5.5, lint + final verification. User has unstaged layout tweaks in widget_config_list.xml.",
+  "created_at": "2026-04-24T04:12:45.159941Z",
+  "kind": "handoff",
+  "signed_by": "SHA256:OxVKzDVT63LWEp3dpa1QPdVAjs1wW80ldT5VzwDO8qM",
+  "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgxDKvRkWA6ZzC+2jAne7ym1ttR/Yn9s/5qRiMu7Kd7xIAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAZ7O2P4ucyqdQjYVqkY3NJm34qIlyPe9PfqnZHIqnoEkgt4iX/dbDofWTbhOYVaz2ahGKW9J3jhCEwxsM9PgOAw=="
+}
