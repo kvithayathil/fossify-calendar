@@ -1,0 +1,11 @@
+{
+  "uuid": "8023a399-f540-480f-85ab-0589720935b5",
+  "display_id": 16,
+  "title": "Fix N+1 query in EventsHelper.getEventsSync",
+  "description": "Steps to reproduce:\n1. \n\nExpected: \nActual: \n\nEventsHelper.kt:557 calls eventsDB.getEventWithId() inside a loop over events. This is an N+1 query problem. Should batch into a single query. This method is on the widget hot path so the impact is amplified — every widget update triggers this.",
+  "status": "open",
+  "priority": "high",
+  "created_by": "WSvX",
+  "created_at": "2026-04-24T05:54:51.661374Z",
+  "updated_at": "2026-04-24T05:54:51.661374Z"
+}
