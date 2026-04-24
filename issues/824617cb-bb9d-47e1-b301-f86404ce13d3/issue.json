@@ -1,0 +1,11 @@
+{
+  "uuid": "824617cb-bb9d-47e1-b301-f86404ce13d3",
+  "display_id": 26,
+  "title": "Research: application lifecycle scoping for coroutine refactor",
+  "description": "Question: \n\nContext: \n\nFindings: \n\nCurrent state: Investigating whether coroutine scope for ensureBackgroundThread refactor can be tied to Application lifecycle.\n\nDesired state: Clear understanding of Android process lifecycle constraints for coroutine scoping.\n\nReason: Research findings (2026-04-24):\n\n## Key Finding: No Reliable App Death Callback\n- Application.onTerminate() — emulator only, never called on real devices\n- ProcessLifecycleOwner — does not dispatch ON_DESTROY for the process\n- OS SIGKILLs the process — all threads/coroutines die regardless\n- Therefore: process-lifetime SupervisorJob and top-level private val achieve the same result\n\n## Implications\n- A top-level SupervisorJob scope in commons is effectively app-scoped already\n- No benefit to involving Application class purely for lifecycle cancellation\n- Real lifecycle cancellation requires per-Activity/Fragment scopes (app-level change)\n\n## Pragmatic Baseline\n- Commons: top-level SupervisorJob + Dispatchers.IO (process-scoped, honest about what it is)\n- Apps can layer per-component scopes as follow-up without further commons changes\n- Semantic clarity over architectural purity — the OS kills everything anyway\n\n## When Application Scope WOULD Help\n- If commons provided an explicit BackgroundScope interface that apps could wire to their Application\n- For shared state initialization (e.g., shared CoroutineExceptionHandler)\n- Not for cancellation — that is per-component",
+  "status": "open",
+  "priority": "low",
+  "created_by": "WSvX",
+  "created_at": "2026-04-24T06:19:08.507713Z",
+  "updated_at": "2026-04-24T06:19:08.507713Z"
+}
