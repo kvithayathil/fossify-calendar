@@ -1,0 +1,11 @@
+{
+  "uuid": "e9d0d883-bf77-485e-98b8-6c27cb6088b2",
+  "display_id": 18,
+  "title": "Add @Transaction annotations to multi-query DAO methods",
+  "description": "Current state: \n\nDesired state: \n\nReason: \n\nEventsDao.kt has methods performing multiple queries without @Transaction annotation. This causes repeated WAL lock acquisition and potential consistency issues. Audit all DAO methods and add @Transaction where appropriate.",
+  "status": "open",
+  "priority": "low",
+  "created_by": "WSvX",
+  "created_at": "2026-04-24T05:54:59.426918Z",
+  "updated_at": "2026-04-24T05:54:59.426918Z"
+}
