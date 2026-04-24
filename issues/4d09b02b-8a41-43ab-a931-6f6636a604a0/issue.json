@@ -1,0 +1,11 @@
+{
+  "uuid": "4d09b02b-8a41-43ab-a931-6f6636a604a0",
+  "display_id": 15,
+  "title": "Add missing database indexes on Event entity",
+  "description": "Current state: \n\nDesired state: \n\nReason: \n\nColumns event_type, start_ts, end_ts are used heavily in WHERE/ORDER BY clauses in EventsDao but lack @Index annotations in Event.kt:39. This forces full table scans on every query. Add composite and single-column indexes for these frequently filtered/sorted columns. This is likely the single biggest performance win in the codebase.",
+  "status": "open",
+  "priority": "high",
+  "created_by": "WSvX",
+  "created_at": "2026-04-24T05:54:48.908924Z",
+  "updated_at": "2026-04-24T05:54:48.908924Z"
+}
