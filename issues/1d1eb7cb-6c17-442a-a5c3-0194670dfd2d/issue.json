@@ -1,6 +1,6 @@
 {
   "uuid": "1d1eb7cb-6c17-442a-a5c3-0194670dfd2d",
-  "display_id": 22,
+  "display_id": 23,
   "title": "Convert List.contains to Set lookups in EventsHelper",
   "description": "Current state: \n\nDesired state: \n\nReason: \n\nEventsHelper.kt lines 318, 546 call List.contains() on potentially large collections. Convert to Set for O(1) lookups. Low individual impact but cumulative when processing many events.",
   "status": "open",
