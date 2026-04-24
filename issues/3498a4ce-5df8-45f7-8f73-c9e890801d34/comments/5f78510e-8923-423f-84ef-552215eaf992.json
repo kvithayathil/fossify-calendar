@@ -1,0 +1,10 @@
+{
+  "uuid": "5f78510e-8923-423f-84ef-552215eaf992",
+  "issue_uuid": "3498a4ce-5df8-45f7-8f73-c9e890801d34",
+  "author": "WSvX",
+  "content": "Session 4 (2026-04-24): Fixed calendar picker pre-selection — when 'All calendars' is default (mSelectedCalendars empty), tapping picker now pre-checks all calendars. Commit 247ec9bca.",
+  "created_at": "2026-04-24T04:09:07.775952Z",
+  "kind": "note",
+  "signed_by": "SHA256:OxVKzDVT63LWEp3dpa1QPdVAjs1wW80ldT5VzwDO8qM",
+  "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgxDKvRkWA6ZzC+2jAne7ym1ttR/Yn9s/5qRiMu7Kd7xIAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAvZaETjXjIIATF0FoM388CpGy+V89FagGu6CUqqMUu9lDb0cjVjJoqupsh3SpyPh148j0kXunSc2xWFOK3PjqCQ=="
+}
