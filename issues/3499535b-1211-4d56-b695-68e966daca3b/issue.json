@@ -3,9 +3,10 @@
   "display_id": 27,
   "title": "Fix saveConfig to preserve explicit-zero calendar selection",
   "description": "Current state: saveConfig() saves null when mSelectedCalendars is empty, collapsing default-all and explicitly-chose-0 into the same DB value.\n\nDesired state: Save empty string when user explicitly selected 0 calendars. Save null only for the default/never-configured state.\n\nFile: WidgetListConfigureActivity.kt:146-150\nChange: val calendarsStr = if (mSelectedCalendars.isEmpty()) null else ... to always save mSelectedCalendars.joinToString(',') (yields empty string for empty set, keeping null only for default).\n\nNeed a separate flag to know if user ever opened the picker, OR always save non-null once picker is touched.",
-  "status": "open",
+  "status": "closed",
   "priority": "high",
   "created_by": "WSvX",
   "created_at": "2026-04-25T19:28:34.531863Z",
-  "updated_at": "2026-04-25T19:28:34.531863Z"
+  "updated_at": "2026-04-25T22:33:18.769655Z",
+  "closed_at": "2026-04-25T22:33:18.769655Z"
 }
