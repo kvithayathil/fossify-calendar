@@ -3,9 +3,10 @@
   "display_id": 28,
   "title": "Fix updateCalendarPickerLabel for 3-state calendar selection",
   "description": "Current state: updateCalendarPickerLabel() treats empty set as All calendars, cannot distinguish default from explicit-zero.\n\nDesired state: 3 states displayed:\n- calendars=null (never configured): All calendars\n- calendars='' (explicitly chose none): No calendars selected (new string)\n- calendars='1,2,3': N calendars selected\n\nFile: WidgetListConfigureActivity.kt:305-313\nPass isCalendarsConfigured() or similar flag so label can distinguish null from empty.\n\nAlso wire up the existing calendar_picker_warning_message view to show when 0 calendars selected.",
-  "status": "open",
+  "status": "closed",
   "priority": "high",
   "created_by": "WSvX",
   "created_at": "2026-04-25T19:28:38.207333Z",
-  "updated_at": "2026-04-25T19:28:38.207333Z"
+  "updated_at": "2026-04-25T22:33:20.738950Z",
+  "closed_at": "2026-04-25T22:33:20.738950Z"
 }
