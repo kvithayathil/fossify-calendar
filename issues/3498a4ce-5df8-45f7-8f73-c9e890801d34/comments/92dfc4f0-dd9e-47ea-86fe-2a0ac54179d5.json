@@ -1,0 +1,10 @@
+{
+  "uuid": "92dfc4f0-dd9e-47ea-86fe-2a0ac54179d5",
+  "issue_uuid": "3498a4ce-5df8-45f7-8f73-c9e890801d34",
+  "author": "WSvX",
+  "content": "Session 5 (2026-04-25): CI fixes for PR #1160 — resolving lint/test failures from GitHub Actions run 24943327572.\n\nRoot cause: Single compilation error at EventsHelper.kt:566 — LongSparseArray<Int> passed where Map<Long, Int> was expected in decorateEvent(). This caused both lint and test jobs to fail.\n\nFix 1 — Type mismatch (EventsHelper.kt:576): Changed decorateEvent() param from Map<Long, Int> to LongSparseArray<Int>. Single-line change, import already present.\n\nFix 2 — GestureBackNavigation lint error (WidgetListConfigureActivity.kt:283): Converted deprecated onBackPressed() to onBackPressedCompat() pattern, consistent with other activities.\n\nStatus: Both fixes applied locally. compileFossDebugKotlin and compileCoreDebugKotlin green. Detekt passes. Full lint and test suite verification pending. Changes NOT pushed — awaiting review.",
+  "created_at": "2026-04-25T23:54:38.647903Z",
+  "kind": "note",
+  "signed_by": "SHA256:OxVKzDVT63LWEp3dpa1QPdVAjs1wW80ldT5VzwDO8qM",
+  "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgxDKvRkWA6ZzC+2jAne7ym1ttR/Yn9s/5qRiMu7Kd7xIAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABA9Lr5PvSdpRuAggevKfpDY5rdegdp1MDVQu3hqNNsEV1Karrm337p6CN16dzq2F3JHLteQIKEPBJ6kFTE0rApBg=="
+}
