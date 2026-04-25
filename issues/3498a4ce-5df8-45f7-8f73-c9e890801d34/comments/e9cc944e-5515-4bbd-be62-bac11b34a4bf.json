@@ -1,0 +1,10 @@
+{
+  "uuid": "e9cc944e-5515-4bbd-be62-bac11b34a4bf",
+  "issue_uuid": "3498a4ce-5df8-45f7-8f73-c9e890801d34",
+  "author": "WSvX",
+  "content": "Session 5 (2026-04-25): Pre-merge cleanup and CI fixes\n\n## Changelog\n- Consolidated [Unreleased] entries: removed ~30 duplicates and implementation-detail lines, replaced with 6 concise user-facing entries matching upstream format. Commit 4e1fa5078.\n\n## Rebase onto upstream\n- Rebased onto upstream/main to resolve PR #1160 conflicts (upstream added NZ holidays #1158, updated holidays #1159).\n- 3 CHANGELOG.md conflict resolutions during rebase — all merged our consolidated entries with upstream's NZ holidays entry.\n\n## Detekt fixes (CI failure)\n- MaxLineLength: broke long line in MyWidgetListProvider.kt\n- MagicNumber: added '11', '12' to ignoreNumbers in detekt.yml (migration version numbers)\n- CyclomaticComplexMethod + NestedBlockDepth: extracted 4 private helpers from getEventsSync (getEventsForCalendars, getDisplayFilteredEvents, getUnfilteredEvents, decorateEvent) to bring complexity from 20 to under threshold 15. Also simplified compound condition in decorateEvent.\n- Commit dea77fc0b.\n\n## Current branch state\n9 commits ahead of upstream/main, 0 behind. All detekt violations resolved locally (BUILD SUCCESSFUL). PR #1160 force-pushed, awaiting CI re-run.",
+  "created_at": "2026-04-25T23:39:53.575271Z",
+  "kind": "handoff",
+  "signed_by": "SHA256:OxVKzDVT63LWEp3dpa1QPdVAjs1wW80ldT5VzwDO8qM",
+  "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgxDKvRkWA6ZzC+2jAne7ym1ttR/Yn9s/5qRiMu7Kd7xIAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAbQ9mFvsLgYhf+/ah7GbZr0s8wKWxUUo3PTVR1W4+Vg2MhmJdXoMuYgSKMO4qsvcd15AixSi8UA7wy9EE8TB5Ag=="
+}
