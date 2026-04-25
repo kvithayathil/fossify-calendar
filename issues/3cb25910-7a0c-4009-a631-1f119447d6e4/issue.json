@@ -1,0 +1,11 @@
+{
+  "uuid": "3cb25910-7a0c-4009-a631-1f119447d6e4",
+  "display_id": 29,
+  "title": "Add string resource for zero-calendars-selected label",
+  "description": "Current state: Only widget_calendars_selected_all and widget_calendars_selected_count exist.\n\nDesired state: Add widget_calendars_selected_none for the explicit-zero case.\n\nFile: app/src/main/res/values/strings.xml",
+  "status": "open",
+  "priority": "medium",
+  "created_by": "WSvX",
+  "created_at": "2026-04-25T19:28:39.854972Z",
+  "updated_at": "2026-04-25T19:28:39.854972Z"
+}
