@@ -3,9 +3,10 @@
   "display_id": 31,
   "title": "Show warning when zero calendars selected in config",
   "description": "Current state: widget_config_list.xml has calendar_picker_warning_message TextView with text Warning: You have no calendars selected but never made visible.\n\nDesired state: Show/hide warning based on calendar selection state. Update in updateCalendarPickerLabel() and after dialog callback.",
-  "status": "open",
+  "status": "closed",
   "priority": "low",
   "created_by": "WSvX",
   "created_at": "2026-04-25T19:28:44.102514Z",
-  "updated_at": "2026-04-25T19:28:44.102514Z"
+  "updated_at": "2026-04-25T22:33:24.974657Z",
+  "closed_at": "2026-04-25T22:33:24.974657Z"
 }
