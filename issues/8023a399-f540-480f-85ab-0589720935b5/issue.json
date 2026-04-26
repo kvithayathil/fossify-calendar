@@ -7,9 +7,12 @@
   "priority": "low",
   "created_by": "WSvX",
   "created_at": "2026-04-24T05:54:51.661374Z",
-  "updated_at": "2026-04-26T03:22:14.865628Z",
+  "updated_at": "2026-04-26T03:24:29.654032Z",
   "labels": [
     "bug",
     "performance"
+  ],
+  "related": [
+    "d04e88c1-1134-4f68-84f4-8b264969dac3"
   ]
 }
