@@ -1,0 +1,10 @@
+{
+  "uuid": "b6f6481c-91be-44be-8465-f2c630e8dfe5",
+  "issue_uuid": "3498a4ce-5df8-45f7-8f73-c9e890801d34",
+  "author": "WSvX",
+  "content": "## Session 5 (2026-04-25): Lint Review + Polish\n\n### Actions\n- Reviewed lint-results-fossDebug.html: 14 warnings, 0 errors\n- Identified 1 feature-introduced issue (ContentDescription on widget header ImageViews)\n- Fixed: ImageView→ImageButton with contentDescription for all 3 widget header actions\n- Refactored: deprecated onBackPressed → onBackPressedCompat in WidgetListConfigureActivity\n- Fixed: Map<Long,Int> → LongSparseArray<Int> in EventsHelper\n- Fixed: hardcoded hex → @color reference in debug launcher background\n- 3 commits: 115de4c88, 29b387c68, 5060be6a4 (amended to a9374e49d)\n- Closed crosslink #11 (Room schema committed)\n\n### Current Status\n- Build: PASSING (lint 0 errors, 14 warnings all pre-existing or expected MissingTranslation)\n- Lint: 0 feature-introduced issues\n- Detekt: PASSING (resolved in dea77fc0b)\n- All 12 feature files committed across 7 commits\n\n### Remaining\n- Manual testing per design doc section 5.5\n- Final verification: migration backward compat on device\n- Push to remote for PR",
+  "created_at": "2026-04-26T00:26:22.349033Z",
+  "kind": "note",
+  "signed_by": "SHA256:OxVKzDVT63LWEp3dpa1QPdVAjs1wW80ldT5VzwDO8qM",
+  "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgxDKvRkWA6ZzC+2jAne7ym1ttR/Yn9s/5qRiMu7Kd7xIAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAl7snQzUgfefQ9ME2LmeGgNp/ppnkCT98zzbcNAFbvgBP89BPC6agSG7fZ8wYSPrqFsVxYxd8xnnHVu219whHAA=="
+}
