@@ -1,0 +1,10 @@
+{
+  "uuid": "c6c9cbc7-7937-4fca-8c4d-ddf5b4a8088e",
+  "issue_uuid": "8023a399-f540-480f-85ab-0589720935b5",
+  "author": "WSvX",
+  "content": "## Workload assessment: marginal impact\n\nRealistic workload analysis shows this fix is unlikely to be user-perceptible:\n\n- PK lookups (WHERE id = :id) complete in ~0.05-0.2ms each via B-tree\n- Runs on background thread (ensureBackgroundThread at EventsHelper.kt:452)\n- Room caches prepared statements; repeated PK lookups are effectively RAM reads\n- Widget update ANR window is 10 seconds — a 16ms query cost is negligible\n\nRealistic estimates:\n- Widget (1-day, 5-15 events): saves ~2ms\n- Widget (1-month, 30-80 events): saves ~12ms\n- Power user (200+ events): saves ~30ms\n\nThe real win is the early-exit: skip all per-event lookups when no birthday/anniversary calendars exist (birthDayEventId == -1L && anniversaryEventId == -1L). This eliminates N queries for the majority of users.\n\nRecommendation: downgrade priority from high to low. The fix is correct code hygiene but not a performance issue under realistic workloads. See .agent-workspace/upstream-issues/0016-fix-n1-query-events-helper.md for full analysis with citations.",
+  "created_at": "2026-04-26T03:22:01.238397Z",
+  "kind": "observation",
+  "signed_by": "SHA256:OxVKzDVT63LWEp3dpa1QPdVAjs1wW80ldT5VzwDO8qM",
+  "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgxDKvRkWA6ZzC+2jAne7ym1ttR/Yn9s/5qRiMu7Kd7xIAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAQFZVmu4+de030l4hHdbhkCd8hnBt2a1ZA3fEYuk0WyjYWwFzwugHmvDEu9+nv5qa0lwAe4wIHYCybgGnT4n/Cw=="
+}
