@@ -1,0 +1,10 @@
+{
+  "uuid": "b710aacd-fe2a-4fed-a718-96389d9afa0a",
+  "issue_uuid": "d04e88c1-1134-4f68-84f4-8b264969dac3",
+  "author": "WSvX",
+  "content": "## Workload assessment: DiffUtil could regress performance\n\nFull DiffUtil migration is likely a net negative under realistic workloads:\n\n- notifyDataSetChanged() only rebinds visible ViewHolders (~5-10 items), not the entire list\n- DiffUtil.calculateDiff() scans the ENTIRE list — O(N) best case, O(N^2) worst case\n- The hashCode() guard at EventListAdapter.kt:115 already skips identical updates\n- Multi-type adapter (ListEvent/ListSectionDay/ListSectionMonth) frequently hits worst-case diff path on view changes\n\nRealistic estimates (DiffUtil vs current):\n- Day view (10-20 items): ~1ms saved — negligible\n- Week view (30-50 items): break-even\n- Month/list (100-200 items): 5-15ms SLOWER\n- Widget 1yr (500+ items): 50-200ms SLOWER (O(N^2) path)\n\nAdditional risks:\n- Parent class MyRecyclerViewAdapter provides CAB selection that doesn't integrate with ListAdapter.submitList() async diffing\n- ListEvent.hashCode() (14 fields) as selection key could reference stale positions during async diff\n- Would require forking org.fossify.commons or wrapping the adapter\n\nRevised recommendation: 2-line fix only — replace notifyDataSetChanged() with notifyItemRangeChanged() in toggle24HourFormat() and togglePrintMode(). No DiffUtil, no inheritance change. See .agent-workspace/upstream-issues/0017-replace-notifydatasetchanged-with-diffutil.md for full analysis.",
+  "created_at": "2026-04-26T03:22:10.290892Z",
+  "kind": "observation",
+  "signed_by": "SHA256:OxVKzDVT63LWEp3dpa1QPdVAjs1wW80ldT5VzwDO8qM",
+  "signature": "U1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgxDKvRkWA6ZzC+2jAne7ym1ttR/Yn9s/5qRiMu7Kd7xIAAAARY3Jvc3NsaW5rLWNvbW1lbnQAAAAAAAAABnNoYTUxMgAAAFMAAAALc3NoLWVkMjU1MTkAAABAg2623qHzPdGj/D2jmx/LbofPKOhTGk+1wWJQ0pp4N79G3Jq6rxpb7LI/wc6T93HKY25Kwf0CvLVOMEs4XRxHBQ=="
+}
