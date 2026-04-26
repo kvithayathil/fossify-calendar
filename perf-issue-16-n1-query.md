@@ -1,3 +1,12 @@
+---
+title: "Workload analysis: N+1 query in EventsHelper (issue #16)"
+tags: ["performance", "issue-16", "workload-analysis"]
+sources: []
+contributors: ["WSvX"]
+created: 2026-04-26
+updated: 2026-04-26
+---
+
 # Fix N+1 query in EventsHelper.getEventsSync
 
 ## Title

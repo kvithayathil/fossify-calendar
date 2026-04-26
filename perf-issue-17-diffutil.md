@@ -1,3 +1,12 @@
+---
+title: "Workload analysis: DiffUtil in EventListAdapter (issue #17)"
+tags: ["performance", "issue-17", "workload-analysis"]
+sources: []
+contributors: ["WSvX"]
+created: 2026-04-26
+updated: 2026-04-26
+---
+
 # Replace notifyDataSetChanged with DiffUtil in EventListAdapter
 
 ## Title
